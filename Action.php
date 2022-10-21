@@ -23,7 +23,7 @@ class WeChatShare_Action extends Typecho_Widget implements Widget_Interface_Do
     public function insertWxShare()
     {
         if($this->user->group != 'administrator') {
-            throw new Typecho_Plugin_Exception(_t('f**k,别瞎jb搞'));
+            throw new Typecho_Plugin_Exception(_t('出错了'));
         }
         $data = [];
         //接收数据
@@ -62,7 +62,7 @@ class WeChatShare_Action extends Typecho_Widget implements Widget_Interface_Do
 
         if(!$this->request->isPost()) {
 
-            throw new Typecho_Plugin_Exception(_t('f**k,别瞎jb搞'));
+            throw new Typecho_Plugin_Exception(_t('出错了'));
         }
 
         $params = $this->request->from(['cid','parameter_type','title','signature_url']);
@@ -71,7 +71,7 @@ class WeChatShare_Action extends Typecho_Widget implements Widget_Interface_Do
 
         if(empty($title) || empty($signature_url) || empty($parameter_type)) {
 
-            throw new Typecho_Plugin_Exception(_t('f**k,别瞎jb搞'));
+            throw new Typecho_Plugin_Exception(_t('出错了'));
         }
 
         $wx_share = [];
